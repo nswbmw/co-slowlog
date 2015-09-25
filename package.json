@@ -1,0 +1,29 @@
+{
+  "name": "co-slowlog",
+  "description": "slowlog for GeneratorFunction or function that return a Promise.",
+  "version": "1.0.0",
+  "keywords": [
+    "bunyan",
+    "co",
+    "slowlog",
+    "log",
+    "logger",
+    "redis",
+    "stream"
+  ],
+  "dependencies": {
+    "bunyan": "^1.5.1",
+    "is-generator": "^1.0.2",
+    "merge-descriptors": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nswbmw/co-slowlog"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "co": "^4.6.0",
+    "co-wait": "0.0.0",
+    "ioredis": "^1.9.0"
+  }
+}
