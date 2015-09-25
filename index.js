@@ -36,7 +36,7 @@ module.exports = function (defaultConfig) {
 
         var slow = Date.now() - start;
         if (slow >= options.slow) {
-          log.info({ input: args, output: result, fn: fn.name, filename: module.parent.filename }, slow + 'ms');
+          log.info({ input: args, output: result, fn: options.fn || fn.name, filename: module.parent.filename }, slow + 'ms');
         }
         return result;
       };
@@ -50,7 +50,7 @@ module.exports = function (defaultConfig) {
           .then(function (result) {
             var slow = Date.now() - start;
             if (slow >= options.slow) {
-              log.info({ input: args, output: result, fn: fn.name, filename: module.parent.filename }, slow + 'ms');
+              log.info({ input: args, output: result, fn: options.fn || fn.name, filename: module.parent.filename }, slow + 'ms');
             }
             return result;
           });

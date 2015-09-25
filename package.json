@@ -1,7 +1,7 @@
 {
   "name": "co-slowlog",
   "description": "slowlog for GeneratorFunction or function that return a Promise.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "bunyan",
     "co",
