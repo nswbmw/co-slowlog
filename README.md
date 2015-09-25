@@ -160,13 +160,13 @@ co(function* () {
 output:
 
 ```
-{"name":"example","slow":500,"hostname":"nswbmw.local","pid":39933,"level":30,"input":["111","222"],"output":"genResult","fn":"delayGeneratorFunc","filename":"/Users/nswbmw/快盘/GitHub/co-slowlog/examples/stdout.js","msg":"1005ms","time":"2015-09-25T04:24:54.738Z","v":0}
-{"name":"example","slow":500,"hostname":"nswbmw.local","pid":39933,"level":30,"input":["333","444"],"output":"promiseResult","fn":"delayPromiseFunc","filename":"/Users/nswbmw/快盘/GitHub/co-slowlog/examples/stdout.js","msg":"1006ms","time":"2015-09-25T04:24:55.747Z","v":0}
+{"name":"example","slow":500,"hostname":"nswbmw.local","pid":39933,"level":30,"input":["111","222"],"output":"genResult","fn":"delayGeneratorFunc","filename":"/Users/nswbmw/GitHub/co-slowlog/examples/stdout.js","msg":"1005ms","time":"2015-09-25T04:24:54.738Z","v":0}
+{"name":"example","slow":500,"hostname":"nswbmw.local","pid":39933,"level":30,"input":["333","444"],"output":"promiseResult","fn":"delayPromiseFunc","filename":"/Users/nswbmw/GitHub/co-slowlog/examples/stdout.js","msg":"1006ms","time":"2015-09-25T04:24:55.747Z","v":0}
 ```
 
 ### Examples
 
-see [examples](..examples).
+see [examples](./examples).
 
 ### License
 
