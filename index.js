@@ -1,5 +1,6 @@
 'use strict';
 
+let _ = require('lodash');
 let isGeneratorFn = require('is-generator').fn;
 let bunyan = require('bunyan');
 let merge = require('merge-descriptors');
@@ -20,7 +21,7 @@ module.exports = function (defaultConfig) {
   defaultConfig.slow = defaultConfig.slow || 500; //ms
   defaultConfig.name = defaultConfig.name || module.parent.filename;
 
-  let log = bunyan.createLogger(defaultConfig);
+  let logger = bunyan.createLogger(defaultConfig);
 
   return function (fn, options) {
     options = options || {};
@@ -36,7 +37,9 @@ module.exports = function (defaultConfig) {
 
         var slow = Date.now() - start;
         if (slow >= options.slow) {
-          log.info({ input: args, output: result, fn: options.fn || fn.name, filename: module.parent.filename }, slow + 'ms');
+          options = _.omit(options, 'stream', 'streams', 'serializers');
+          let log = merge({ input: args, output: result, fn: fn.name, filename: module.parent.filename }, options);
+          logger.info(log, slow + 'ms');
         }
         return result;
       };
@@ -50,7 +53,9 @@ module.exports = function (defaultConfig) {
           .then(function (result) {
             var slow = Date.now() - start;
             if (slow >= options.slow) {
-              log.info({ input: args, output: result, fn: options.fn || fn.name, filename: module.parent.filename }, slow + 'ms');
+              options = _.omit(options, 'stream', 'streams', 'serializers');
+              let log = merge({ input: args, output: result, fn: fn.name, filename: module.parent.filename }, options);
+              logger.info(log, slow + 'ms');
             }
             return result;
           });
